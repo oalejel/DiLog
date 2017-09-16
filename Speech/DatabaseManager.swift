@@ -12,7 +12,12 @@ import Firebase
 
 @objc class DatabaseManager: NSObject {
     @objc static let sharedInstance: DatabaseManager! = DatabaseManager()
+    //do not use this in student mode – you should eventually make this code safer
     @objc public var streamingLanguageCode: String! = "en-US"
+    @objc public var studentLangaugeCode: String! = "es-MX"
+    
+    var translater: ROGoogleTranslate!
+    
     
     var ref: DatabaseReference!
     var lastEntryIndex = 0
@@ -29,8 +34,24 @@ import Firebase
     }
     
     func setupDatabaseListener() {
+         translater = ROGoogleTranslate()
+        
         ref.child("instructors").child(instructorCode).observe(.childAdded, with: { (snapshot) in
-            print("snapshot key: " + (snapshot.value as! String))
+            let untranslatedString = (snapshot.value as! String)
+            print("snapshot key: " + untranslatedString)
+            
+            
+            
+            
+            // NEED TO GET THE SPEAKER's LANGUAGE ON START!!!
+            let teacherLang = self.streamingLanguageCode//WARNING
+            
+            
+            
+            let params = ROGoogleTranslateParams(source: teacherLang!, target: self.studentLangaugeCode, text: untranslatedString)
+            self.translater.translate(params: params, callback: { (translatedString) in
+                print("> TRANSLATED" + translatedString)
+            })
         })
     }
     

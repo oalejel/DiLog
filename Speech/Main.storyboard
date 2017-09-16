@@ -177,23 +177,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(JOIN CODE)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhk-TT-vgR">
-                                <rect key="frame" x="38" y="307" width="298" height="53"/>
+                                <rect key="frame" x="16" y="277" width="343" height="105"/>
                                 <color key="backgroundColor" red="0.96978109140000002" green="0.96978109140000002" blue="0.96978109140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="EqP-9x-Ek6"/>
+                                    <constraint firstAttribute="height" constant="105" id="EqP-9x-Ek6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show your QR Code to students!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-7h-a22">
-                                <rect key="frame" x="38" y="248" width="250" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show your stream code to students!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-7h-a22">
+                                <rect key="frame" x="16" y="244" width="322.5" height="25"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60H-qk-NDC" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="70" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ifs-NI-6T8"/>
+                                    <constraint firstAttribute="height" constant="45" id="ylz-Xb-Vg1"/>
+                                </constraints>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Upg-2e-NoS" kind="unwind" unwindAction="rewindToTeacherLanguageWithSegue:" id="400-0F-YBB"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO7-Wv-yha" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
-                                <rect key="frame" x="38" y="385" width="298" height="45"/>
+                                <rect key="frame" x="38" y="410" width="298" height="45"/>
                                 <color key="backgroundColor" red="0.89712611610000004" green="0.1232700893" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Wfl-AJ-DLH"/>
@@ -205,34 +219,26 @@
                                     <action selector="recordAudio:" destination="Dxb-4z-iAw" eventType="touchUpInside" id="3Jg-5O-fra"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60H-qk-NDC" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
-                                <rect key="frame" x="16" y="602" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="ifs-NI-6T8"/>
-                                    <constraint firstAttribute="height" constant="45" id="ylz-Xb-Vg1"/>
-                                </constraints>
-                                <state key="normal" title="back"/>
-                                <connections>
-                                    <segue destination="Upg-2e-NoS" kind="unwind" unwindAction="rewindToTeacherLanguageWithSegue:" id="400-0F-YBB"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JO7-Wv-yha" firstAttribute="top" secondItem="nhk-TT-vgR" secondAttribute="bottom" constant="25" id="1gC-fx-LKC"/>
-                            <constraint firstItem="nhk-TT-vgR" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" constant="22" id="6B0-oZ-FAt"/>
-                            <constraint firstItem="t6n-7h-a22" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" constant="22" id="836-LQ-BYO"/>
-                            <constraint firstItem="nhk-TT-vgR" firstAttribute="centerY" secondItem="EeU-tB-227" secondAttribute="centerY" id="8Ek-3c-OqQ"/>
-                            <constraint firstItem="nhk-TT-vgR" firstAttribute="top" secondItem="t6n-7h-a22" secondAttribute="bottom" constant="38" id="Blh-Bc-Ymn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nhk-TT-vgR" secondAttribute="trailing" constant="23" id="MM0-jp-ocr"/>
+                            <constraint firstItem="JO7-Wv-yha" firstAttribute="top" secondItem="nhk-TT-vgR" secondAttribute="bottom" constant="28" id="1gC-fx-LKC"/>
+                            <constraint firstItem="nhk-TT-vgR" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="6B0-oZ-FAt"/>
+                            <constraint firstItem="t6n-7h-a22" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="836-LQ-BYO"/>
+                            <constraint firstItem="nhk-TT-vgR" firstAttribute="centerY" secondItem="EeU-tB-227" secondAttribute="centerY" constant="-4" id="8Ek-3c-OqQ"/>
+                            <constraint firstItem="nhk-TT-vgR" firstAttribute="top" secondItem="t6n-7h-a22" secondAttribute="bottom" constant="8" id="Blh-Bc-Ymn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nhk-TT-vgR" secondAttribute="trailing" id="MM0-jp-ocr"/>
                             <constraint firstItem="JO7-Wv-yha" firstAttribute="centerX" secondItem="EeU-tB-227" secondAttribute="centerX" id="T1I-sj-eSv"/>
                             <constraint firstItem="60H-qk-NDC" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="a2q-ZA-Kfi"/>
-                            <constraint firstItem="JO7-Wv-yha" firstAttribute="width" secondItem="nhk-TT-vgR" secondAttribute="width" id="i7d-hY-eXh"/>
+                            <constraint firstItem="JO7-Wv-yha" firstAttribute="width" secondItem="nhk-TT-vgR" secondAttribute="width" constant="-45" id="i7d-hY-eXh"/>
                             <constraint firstItem="k1O-P6-Jzb" firstAttribute="top" secondItem="60H-qk-NDC" secondAttribute="bottom" constant="20" id="qIp-YZ-hRv"/>
                             <constraint firstItem="nhk-TT-vgR" firstAttribute="centerX" secondItem="EeU-tB-227" secondAttribute="centerX" id="yVg-9T-xjz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="60H-qk-NDC" id="Yqz-Bf-sFc"/>
+                        <outlet property="codeLabel" destination="nhk-TT-vgR" id="tLk-Z8-BxG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REq-7d-A0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Upg-2e-NoS" userLabel="Exit" sceneMemberID="exit"/>

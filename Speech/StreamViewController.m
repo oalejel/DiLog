@@ -26,7 +26,10 @@
 
 @interface StreamViewController () <AudioControllerDelegate>
 @property (nonatomic, strong) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
 @property (nonatomic, strong) NSMutableData *audioData;
+@property (weak, nonatomic) IBOutlet SqueezeButton *backButton;
+
 @end
 
 @implementation StreamViewController
@@ -37,9 +40,11 @@
   [AudioController sharedInstance].delegate = self;
    
     [[DatabaseManager sharedInstance] setupDatabaseEntry];
+    [[self.codeLabel layer] setCornerRadius:10];
+    [[self.codeLabel layer] setMasksToBounds:YES];
+    
+    [self.backButton setBordered];
 }
-
-
 
 - (IBAction)recordAudio:(id)sender {
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
