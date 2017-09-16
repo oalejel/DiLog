@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="d2x-tp-vFc">
@@ -39,6 +44,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="z0q-gi-GR5"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                 <state key="normal" title="Teacher"/>
                                 <connections>
                                     <segue destination="ZmX-tg-DZ9" kind="showDetail" id="Zna-K1-mZr">
@@ -57,6 +63,10 @@
                             <constraint firstItem="kJC-GO-0XK" firstAttribute="leading" secondItem="UeF-xo-fwF" secondAttribute="leadingMargin" constant="25" id="zhh-jw-irY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="studentButton" destination="kJC-GO-0XK" id="We9-fx-cYB"/>
+                        <outlet property="teacherButton" destination="BY6-pH-phK" id="vAD-3e-wsR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAM-V2-DgS" sceneMemberID="firstResponder"/>
             </objects>

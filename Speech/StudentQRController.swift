@@ -15,7 +15,7 @@ class StudentQRController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         codeTextField.delegate = self
-
+        DatabaseManager.sharedInstance.setupDatabaseListener()
 
         // Do any additional setup after loading the view.
     }

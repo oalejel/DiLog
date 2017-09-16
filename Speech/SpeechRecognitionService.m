@@ -38,6 +38,7 @@
   static SpeechRecognitionService *instance = nil;
   if (!instance) {
     instance = [[self alloc] init];
+      
     instance.sampleRate = 16000.0; // default value
   }
   return instance;
@@ -69,13 +70,15 @@
     RecognitionConfig *recognitionConfig = [RecognitionConfig message];
     recognitionConfig.encoding = RecognitionConfig_AudioEncoding_Linear16;
     recognitionConfig.sampleRateHertz = self.sampleRate;
+      
     recognitionConfig.languageCode = @"en-US";
-    recognitionConfig.maxAlternatives = 30;
+
+      recognitionConfig.maxAlternatives = 30;
 
     StreamingRecognitionConfig *streamingRecognitionConfig = [StreamingRecognitionConfig message];
     streamingRecognitionConfig.config = recognitionConfig;
     streamingRecognitionConfig.singleUtterance = NO;
-    streamingRecognitionConfig.interimResults = YES;
+    streamingRecognitionConfig.interimResults = NO;
 
     StreamingRecognizeRequest *streamingRecognizeRequest = [StreamingRecognizeRequest message];
     streamingRecognizeRequest.streamingConfig = streamingRecognitionConfig;

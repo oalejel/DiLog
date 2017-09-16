@@ -71,7 +71,7 @@
   int chunk_size = 0.1 /* seconds/chunk */ * SAMPLE_RATE * 2 /* bytes/sample */ ; /* bytes/chunk */
 
   if ([self.audioData length] > chunk_size) {
-//    NSLog(@"SENDING");
+    NSLog(@"SENDING");
     [[SpeechRecognitionService sharedInstance] streamAudioData:self.audioData
                                                 withCompletion:^(StreamingRecognizeResponse *response, NSError *error) {
                                                   if (error) {
@@ -86,12 +86,19 @@
                                                       
                                                     for (StreamingRecognitionResult *result in response.resultsArray) {
                                                       if (result.isFinal) {
-                                                        finished = YES;
                                                           
-                                                          [[DatabaseManager sharedInstance] postWithResponse: response]];
+                                                        finished = YES;
+                                                          NSString *text = nil;
+                                                          for (StreamingRecognitionResult *alternative in result.alternativesArray) {
+                                                              text = [NSString stringWithFormat:@"%@",[alternative valueForKey:@"transcript"]];
+                                                          }
+                                                          
+                                                          [[DatabaseManager sharedInstance] postWithText: text];
+                                                          _textView.text = [response description];
                                                       }
                                                     }
-                                                    _textView.text = [response description];
+                                                      
+                                                    
                                                     if (finished) {
 //                                                      [self stopAudio:nil];
                                                     }

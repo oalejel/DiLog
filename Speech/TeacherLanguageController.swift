@@ -15,7 +15,7 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBOutlet weak var languagePicker: UIPickerView!
     
-    var languageNames = ["English", "Spanish"]
+    var languageCodes = ["English":"en-US", "Spanish (Español)":"es-MX", "French (Français)":"fr-FR", "German (Deutsch)":"de-DE", "Mandarin (國語 (台灣))":"cmn-Hant-TW"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +28,11 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return languageNames.count
+        return languageCodes.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return languageNames[row]
+        return Array(languageCodes.keys)[row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

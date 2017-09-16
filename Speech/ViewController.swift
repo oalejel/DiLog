@@ -11,13 +11,18 @@ import Firebase
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var teacherButton: SqueezeButton!
     
-
+    @IBOutlet weak var studentButton: SqueezeButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //REMOVE THIS LATER
         UserDefaults.standard.setValue(false, forKey:"_UIConstraintBasedLayoutLogUnsatisfiable")
 
+        studentButton.layer.borderColor = UIColor.purple.cgColor
+        studentButton.layer.borderWidth = 3
+        
         // Do any additional setup after loading the view.
     }
 
