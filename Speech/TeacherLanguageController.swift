@@ -11,10 +11,12 @@ import UIKit
 class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     //TODO: implement teh text field capability later
-    @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var languagePicker: UIPickerView!
     
+    @IBOutlet weak var backButton: SqueezeButton!
+    
+    //please organize these alphabetically!!!
     var languageCodes = ["English":"en-US", "Spanish (Español)":"es-MX", "French (Français)":"fr-FR", "German (Deutsch)":"de-DE", "Mandarin (國語 (台灣))":"cmn-Hant-TW"]
     
     override func viewDidLoad() {
@@ -25,7 +27,11 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
         languagePicker.dataSource = self
         languagePicker.delegate = self
         
+        backButton.setBordered()
+        
     }
+    
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return languageCodes.count
@@ -42,16 +48,19 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBAction func rewindToTeacherLanguage(segue: UIStoryboardSegue) {
         print("rewinding to teacher lang vc")
     }
-    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let langString = pickerView(languagePicker, titleForRow: languagePicker.selectedRow(inComponent: 0), forComponent: 0) ?? "English"
+        streamingLanguageCode = languageCodes[langString]
+        print(streamingLanguageCode)
     }
-    */
+ 
 
 }

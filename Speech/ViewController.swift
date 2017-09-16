@@ -20,8 +20,9 @@ class ViewController: UIViewController {
         //REMOVE THIS LATER
         UserDefaults.standard.setValue(false, forKey:"_UIConstraintBasedLayoutLogUnsatisfiable")
 
-        studentButton.layer.borderColor = UIColor.purple.cgColor
-        studentButton.layer.borderWidth = 3
+        studentButton.setBordered()
+//        studentButton.layer.borderColor = UIColor(red: 0.463, green: 0.29, blue: 0.902, alpha: 1).cgColor
+//        studentButton.layer.borderWidth = 3
         
         // Do any additional setup after loading the view.
     }

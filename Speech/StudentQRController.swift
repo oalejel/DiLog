@@ -12,12 +12,16 @@ class StudentQRController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var qrView: UIView!
     
     @IBOutlet weak var codeTextField: UITextField!
+    
+    @IBOutlet weak var backButton: SqueezeButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         codeTextField.delegate = self
         DatabaseManager.sharedInstance.setupDatabaseListener()
 
         // Do any additional setup after loading the view.
+        
+        backButton.setBordered()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

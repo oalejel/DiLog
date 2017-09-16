@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
@@ -28,38 +31,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJC-GO-0XK" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
-                                <rect key="frame" x="41" y="286" width="293" height="45"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="41" y="474" width="293" height="55"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="cYO-lS-wPM"/>
+                                    <constraint firstAttribute="height" constant="55" id="cYO-lS-wPM"/>
                                 </constraints>
-                                <state key="normal" title="Student"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                <state key="normal" title="Student">
+                                    <color key="titleColor" red="0.46274509803921571" green="0.29019607843137252" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="kXk-Fn-rex" kind="presentation" id="y0n-Zt-1Hj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY6-pH-phK" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
-                                <rect key="frame" x="41" y="217" width="293" height="45"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="41" y="395" width="293" height="55"/>
+                                <color key="backgroundColor" red="0.46274509803921571" green="0.29019607843137252" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="z0q-gi-GR5"/>
+                                    <constraint firstAttribute="height" constant="55" id="z0q-gi-GR5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="Teacher"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                <state key="normal" title="Teacher">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="ZmX-tg-DZ9" kind="showDetail" id="Zna-K1-mZr">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi!  Who are you?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPI-1L-vhZ">
+                                <rect key="frame" x="93" y="258" width="188" height="76.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="28"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RiF-fg-c0f" firstAttribute="top" secondItem="kJC-GO-0XK" secondAttribute="bottom" constant="138" id="A10-7c-3Il"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kJC-GO-0XK" secondAttribute="trailing" constant="25" id="O4O-fR-AyF"/>
+                            <constraint firstItem="jPI-1L-vhZ" firstAttribute="centerX" secondItem="UeF-xo-fwF" secondAttribute="centerX" id="OUb-Yx-1VM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BY6-pH-phK" secondAttribute="trailing" constant="25" id="Wdf-JQ-5g3"/>
-                            <constraint firstItem="BY6-pH-phK" firstAttribute="top" secondItem="9kd-8M-Dp2" secondAttribute="bottom" constant="197" id="jM6-5W-22s"/>
                             <constraint firstItem="kJC-GO-0XK" firstAttribute="top" secondItem="BY6-pH-phK" secondAttribute="bottom" constant="24" id="jtk-Cl-m32"/>
                             <constraint firstItem="BY6-pH-phK" firstAttribute="leading" secondItem="UeF-xo-fwF" secondAttribute="leadingMargin" constant="25" id="kuj-C1-piF"/>
+                            <constraint firstItem="BY6-pH-phK" firstAttribute="top" secondItem="jPI-1L-vhZ" secondAttribute="bottom" constant="60.5" id="tVG-HX-FMg"/>
                             <constraint firstItem="kJC-GO-0XK" firstAttribute="leading" secondItem="UeF-xo-fwF" secondAttribute="leadingMargin" constant="25" id="zhh-jw-irY"/>
                         </constraints>
                     </view>
@@ -70,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAM-V2-DgS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="274"/>
+            <point key="canvasLocation" x="1189.5999999999999" y="272.11394302848578"/>
         </scene>
         <!--Teacher Language Controller-->
         <scene sceneID="bUi-wd-Z4Z">
@@ -84,29 +100,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao2-Eu-yDA">
-                                <rect key="frame" x="0.0" y="143" width="375" height="216"/>
-                            </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m65-Zg-Wfc">
-                                <rect key="frame" x="25" y="105" width="325" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your instructional language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PG-LF-TUY">
-                                <rect key="frame" x="25" y="76" width="252" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-AE-VDu" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
                                 <rect key="frame" x="289" y="602" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.46274509803921571" green="0.29019607843137252" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1bf-3W-03O"/>
                                     <constraint firstAttribute="width" constant="70" id="LLT-0y-Qcd"/>
                                 </constraints>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="Dxb-4z-iAw" kind="show" id="1fD-kr-FWi">
                                         <nil key="action"/>
@@ -115,43 +118,51 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCa-GR-vhK" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
                                 <rect key="frame" x="16" y="602" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Nqg-zV-9WD"/>
                                     <constraint firstAttribute="width" constant="70" id="z2u-PL-nXe"/>
                                 </constraints>
-                                <state key="normal" title="back"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Slr-bb-8gB" kind="unwind" unwindAction="unwindToRootWithSegue:" id="ZXn-NR-rBr"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao2-Eu-yDA">
+                                <rect key="frame" x="0.0" y="176" width="375" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your instructional language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PG-LF-TUY">
+                                <rect key="frame" x="16" y="153" width="302" height="25"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ao2-Eu-yDA" secondAttribute="trailing" id="1Wa-dk-lQr"/>
                             <constraint firstItem="aWY-AE-VDu" firstAttribute="trailing" secondItem="b9u-DC-kgO" secondAttribute="trailingMargin" id="A7j-o6-KGt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="m65-Zg-Wfc" secondAttribute="trailing" constant="9" id="B8K-1o-Rf1"/>
-                            <constraint firstItem="5PG-LF-TUY" firstAttribute="leading" secondItem="b9u-DC-kgO" secondAttribute="leadingMargin" constant="9" id="CoM-7C-oOP"/>
+                            <constraint firstItem="5PG-LF-TUY" firstAttribute="leading" secondItem="b9u-DC-kgO" secondAttribute="leadingMargin" id="CoM-7C-oOP"/>
                             <constraint firstItem="J7v-ZV-TQi" firstAttribute="top" secondItem="rCa-GR-vhK" secondAttribute="bottom" constant="20" id="GRY-KT-sbu"/>
-                            <constraint firstItem="5PG-LF-TUY" firstAttribute="top" secondItem="IRr-kG-EOi" secondAttribute="bottom" constant="56" id="Irk-Gf-oTK"/>
                             <constraint firstItem="rCa-GR-vhK" firstAttribute="leading" secondItem="b9u-DC-kgO" secondAttribute="leadingMargin" id="Ixd-pB-gBD"/>
-                            <constraint firstItem="ao2-Eu-yDA" firstAttribute="top" secondItem="m65-Zg-Wfc" secondAttribute="bottom" constant="8" id="JNK-Uf-cb8"/>
-                            <constraint firstItem="ao2-Eu-yDA" firstAttribute="leading" secondItem="b9u-DC-kgO" secondAttribute="leading" id="Pf2-fd-r9P"/>
-                            <constraint firstItem="m65-Zg-Wfc" firstAttribute="leading" secondItem="b9u-DC-kgO" secondAttribute="leadingMargin" constant="9" id="fCv-Zl-FcC"/>
+                            <constraint firstItem="ao2-Eu-yDA" firstAttribute="centerY" secondItem="b9u-DC-kgO" secondAttribute="centerY" constant="-49.5" id="KWl-RS-xPH"/>
+                            <constraint firstItem="ao2-Eu-yDA" firstAttribute="leading" secondItem="b9u-DC-kgO" secondAttribute="leading" id="Twb-DJ-G0F"/>
+                            <constraint firstItem="ao2-Eu-yDA" firstAttribute="top" secondItem="5PG-LF-TUY" secondAttribute="bottom" constant="-2" id="k36-Q9-dra"/>
                             <constraint firstItem="J7v-ZV-TQi" firstAttribute="top" secondItem="aWY-AE-VDu" secondAttribute="bottom" constant="20" id="lcd-4U-YIu"/>
-                            <constraint firstItem="m65-Zg-Wfc" firstAttribute="top" secondItem="5PG-LF-TUY" secondAttribute="bottom" constant="8" id="pJZ-BB-VNK"/>
-                            <constraint firstItem="m65-Zg-Wfc" firstAttribute="centerX" secondItem="b9u-DC-kgO" secondAttribute="centerX" id="w1n-iA-qs7"/>
+                            <constraint firstAttribute="trailing" secondItem="ao2-Eu-yDA" secondAttribute="trailing" id="ovn-vB-HNn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="rCa-GR-vhK" id="ts7-Rb-Jj4"/>
                         <outlet property="languagePicker" destination="ao2-Eu-yDA" id="1NC-8M-uUv"/>
-                        <outlet property="textField" destination="m65-Zg-Wfc" id="9ug-va-ibm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtN-gm-32S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Slr-bb-8gB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="-37"/>
+            <point key="canvasLocation" x="1965.5999999999999" y="-37.331334332833585"/>
         </scene>
         <!--Stream View Controller-->
         <scene sceneID="yzj-0S-xm4">
@@ -246,26 +257,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input your instructor's streaming code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-Qc-HTN">
-                                <rect key="frame" x="16" y="163" width="291" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input the instructor's streaming code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-Qc-HTN">
+                                <rect key="frame" x="16" y="159" width="336" height="25"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi1-kr-xsq" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
                                 <rect key="frame" x="16" y="602" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="drE-et-YuQ"/>
                                     <constraint firstAttribute="height" constant="45" id="tYw-0y-HTe"/>
                                 </constraints>
-                                <state key="normal" title="back"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="ijG-CH-rDe" kind="unwind" unwindAction="unwindToRootWithSegue:" id="ClM-y5-vgi"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4Il-Du-c9u" firstAttribute="top" secondItem="bi1-kr-xsq" secondAttribute="bottom" constant="20" id="NPe-uC-fuy"/>
                             <constraint firstItem="Qd4-Yg-SJu" firstAttribute="top" secondItem="tZx-Qc-HTN" secondAttribute="bottom" constant="8" id="aYR-UX-AH7"/>
@@ -277,6 +290,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="bi1-kr-xsq" id="o7I-mo-qIi"/>
                         <outlet property="codeTextField" destination="Qd4-Yg-SJu" id="8W8-5I-g0T"/>
                         <segue destination="iip-g0-cbm" kind="show" identifier="showTeacherTranscript" id="zuv-yM-r6m"/>
                     </connections>

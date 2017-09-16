@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  Global.swift
 //  speak2me
 //
 //  Created by Omar Al-Ejel on 9/15/17.
@@ -15,3 +15,7 @@ extension UIButton {
         super.touchesBegan(touches, with: event)
     }
 }
+
+public let ThemePurple = UIColor(red: 0.463, green: 0.29, blue: 0.902, alpha: 1)
+
+public var streamingLanguageCode: String! = "en-US"

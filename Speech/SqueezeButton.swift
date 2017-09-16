@@ -21,6 +21,13 @@ class SqueezeButton: UIButton {
     
     var standardCornerRadius: CGFloat = 10
     
+//    override var backgroundColor: UIColor? {
+//        didSet {
+//            //nice to implement later on... update needed!
+//           testForWhite()
+//        }
+//    }
+    
     ///Looks best when corners are round
     init(frame: CGRect, cornerRadius: CGFloat) {
         super.init(frame: frame)
@@ -30,7 +37,21 @@ class SqueezeButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = standardCornerRadius
+        
+    
+        
     }
+    
+    func setBordered() {
+        layer.borderColor = ThemePurple.cgColor
+        layer.borderWidth = 3
+    }
+    
+//    func testForWhite() {
+//        if (backgroundColor?.cgColor.components == UIColor.white.cgColor) {
+//            
+//        }
+//    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
