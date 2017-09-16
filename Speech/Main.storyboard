@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJC-GO-0XK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJC-GO-0XK" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
                                 <rect key="frame" x="41" y="286" width="293" height="45"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -34,7 +33,7 @@
                                     <segue destination="kXk-Fn-rex" kind="presentation" id="y0n-Zt-1Hj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY6-pH-phK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY6-pH-phK" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
                                 <rect key="frame" x="41" y="217" width="293" height="45"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -75,15 +74,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCa-GR-vhK">
-                                <rect key="frame" x="16" y="602" width="70" height="45"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Nqg-zV-9WD"/>
-                                    <constraint firstAttribute="width" constant="70" id="z2u-PL-nXe"/>
-                                </constraints>
-                                <state key="normal" title="back"/>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao2-Eu-yDA">
                                 <rect key="frame" x="0.0" y="143" width="375" height="216"/>
                             </pickerView>
@@ -99,7 +89,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-AE-VDu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-AE-VDu" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
                                 <rect key="frame" x="289" y="602" width="70" height="45"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -111,6 +101,18 @@
                                     <segue destination="Dxb-4z-iAw" kind="show" id="1fD-kr-FWi">
                                         <nil key="action"/>
                                     </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCa-GR-vhK" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="70" height="45"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Nqg-zV-9WD"/>
+                                    <constraint firstAttribute="width" constant="70" id="z2u-PL-nXe"/>
+                                </constraints>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="Slr-bb-8gB" kind="unwind" unwindAction="unwindToRootWithSegue:" id="ZXn-NR-rBr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -137,6 +139,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtN-gm-32S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Slr-bb-8gB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1966" y="-37"/>
         </scene>
@@ -152,24 +155,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR CODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhk-TT-vgR">
-                                <rect key="frame" x="38" y="184" width="298" height="298"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(JOIN CODE)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhk-TT-vgR">
+                                <rect key="frame" x="38" y="307" width="298" height="53"/>
                                 <color key="backgroundColor" red="0.96978109140000002" green="0.96978109140000002" blue="0.96978109140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="nhk-TT-vgR" secondAttribute="height" multiplier="1:1" id="yh9-M4-fyQ"/>
+                                    <constraint firstAttribute="height" constant="53" id="EqP-9x-Ek6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show your QR Code to students!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-7h-a22">
-                                <rect key="frame" x="38" y="125" width="250" height="21"/>
+                                <rect key="frame" x="38" y="248" width="250" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO7-Wv-yha">
-                                <rect key="frame" x="38" y="507" width="298" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO7-Wv-yha" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="38" y="385" width="298" height="45"/>
                                 <color key="backgroundColor" red="0.89712611610000004" green="0.1232700893" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Wfl-AJ-DLH"/>
@@ -179,6 +182,18 @@
                                 </state>
                                 <connections>
                                     <action selector="recordAudio:" destination="Dxb-4z-iAw" eventType="touchUpInside" id="3Jg-5O-fra"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60H-qk-NDC" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="70" height="45"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ifs-NI-6T8"/>
+                                    <constraint firstAttribute="height" constant="45" id="ylz-Xb-Vg1"/>
+                                </constraints>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="Upg-2e-NoS" kind="unwind" unwindAction="rewindToTeacherLanguageWithSegue:" id="400-0F-YBB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -191,14 +206,17 @@
                             <constraint firstItem="nhk-TT-vgR" firstAttribute="top" secondItem="t6n-7h-a22" secondAttribute="bottom" constant="38" id="Blh-Bc-Ymn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nhk-TT-vgR" secondAttribute="trailing" constant="23" id="MM0-jp-ocr"/>
                             <constraint firstItem="JO7-Wv-yha" firstAttribute="centerX" secondItem="EeU-tB-227" secondAttribute="centerX" id="T1I-sj-eSv"/>
+                            <constraint firstItem="60H-qk-NDC" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="a2q-ZA-Kfi"/>
                             <constraint firstItem="JO7-Wv-yha" firstAttribute="width" secondItem="nhk-TT-vgR" secondAttribute="width" id="i7d-hY-eXh"/>
+                            <constraint firstItem="k1O-P6-Jzb" firstAttribute="top" secondItem="60H-qk-NDC" secondAttribute="bottom" constant="20" id="qIp-YZ-hRv"/>
                             <constraint firstItem="nhk-TT-vgR" firstAttribute="centerX" secondItem="EeU-tB-227" secondAttribute="centerX" id="yVg-9T-xjz"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REq-7d-A0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Upg-2e-NoS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="-37"/>
+            <point key="canvasLocation" x="2780" y="-37.331334332833585"/>
         </scene>
         <!--StudentQR Controller-->
         <scene sceneID="HhV-mg-eMZ">
@@ -212,26 +230,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-wM-v8y">
-                                <rect key="frame" x="16" y="20" width="343" height="421"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qd4-Yg-SJu">
+                                <rect key="frame" x="16" y="192" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input your instructor's streaming code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-Qc-HTN">
+                                <rect key="frame" x="16" y="163" width="291" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi1-kr-xsq" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="70" height="45"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="drE-et-YuQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="tYw-0y-HTe"/>
+                                </constraints>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="ijG-CH-rDe" kind="unwind" unwindAction="unwindToRootWithSegue:" id="ClM-y5-vgi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZyG-wM-v8y" firstAttribute="top" secondItem="xbi-wm-cfD" secondAttribute="bottom" id="2CK-Nh-9GB"/>
-                            <constraint firstItem="ZyG-wM-v8y" firstAttribute="trailing" secondItem="25i-mg-C5H" secondAttribute="trailingMargin" id="IwE-pF-S8Z"/>
-                            <constraint firstItem="4Il-Du-c9u" firstAttribute="top" secondItem="ZyG-wM-v8y" secondAttribute="bottom" constant="226" id="SgK-ZI-Kyo"/>
-                            <constraint firstItem="ZyG-wM-v8y" firstAttribute="leading" secondItem="25i-mg-C5H" secondAttribute="leadingMargin" id="r2N-ec-Eny"/>
+                            <constraint firstItem="4Il-Du-c9u" firstAttribute="top" secondItem="bi1-kr-xsq" secondAttribute="bottom" constant="20" id="NPe-uC-fuy"/>
+                            <constraint firstItem="Qd4-Yg-SJu" firstAttribute="top" secondItem="tZx-Qc-HTN" secondAttribute="bottom" constant="8" id="aYR-UX-AH7"/>
+                            <constraint firstItem="bi1-kr-xsq" firstAttribute="leading" secondItem="25i-mg-C5H" secondAttribute="leadingMargin" id="axU-mM-oM6"/>
+                            <constraint firstItem="Qd4-Yg-SJu" firstAttribute="leading" secondItem="25i-mg-C5H" secondAttribute="leadingMargin" id="lY6-IV-i67"/>
+                            <constraint firstItem="Qd4-Yg-SJu" firstAttribute="trailing" secondItem="25i-mg-C5H" secondAttribute="trailingMargin" id="mP0-WQ-nUl"/>
+                            <constraint firstItem="Qd4-Yg-SJu" firstAttribute="top" secondItem="xbi-wm-cfD" secondAttribute="bottom" constant="172" id="rfC-Lb-pDb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tZx-Qc-HTN" secondAttribute="leading" id="rlJ-ZH-Bwa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="qrView" destination="ZyG-wM-v8y" id="8Xu-9W-9uj"/>
+                        <outlet property="codeTextField" destination="Qd4-Yg-SJu" id="8W8-5I-g0T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUA-Nh-6GN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ijG-CH-rDe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="609"/>
+            <point key="canvasLocation" x="2036" y="609"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PmN-LM-ch5">
@@ -245,7 +287,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="transcript of our translated text!!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-Yo-3Bx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="transcript of our translated text!!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-Yo-3Bx">
                                 <rect key="frame" x="16" y="28" width="343" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -256,6 +298,7 @@
                         <constraints>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="leading" secondItem="Y6w-jL-omv" secondAttribute="leadingMargin" id="FWO-V5-BuE"/>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="top" secondItem="sRs-Su-xI9" secondAttribute="bottom" constant="8" id="NUW-YT-d2q"/>
+                            <constraint firstItem="zj7-1M-CSM" firstAttribute="top" secondItem="LEa-Yo-3Bx" secondAttribute="bottom" constant="142" id="RAV-GB-3EM"/>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="trailing" secondItem="Y6w-jL-omv" secondAttribute="trailingMargin" id="WqR-ds-2fF"/>
                         </constraints>
                     </view>

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "190AC85DBA540F73F845BF61EBE2C8630434E3B4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "139DA58C20279588FD0BFB2336A3553471E6B28A" : 9223372036854775807,
+    "190AC85DBA540F73F845BF61EBE2C8630434E3B4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DF4E021E-D245-48B4-9C7E-60DA99D98258",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "139DA58C20279588FD0BFB2336A3553471E6B28A" : "..\/..",
+    "190AC85DBA540F73F845BF61EBE2C8630434E3B4" : "Speech-gRPC-Streaming\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Speech",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Speech.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GoogleCloudPlatform\/ios-docs-samples.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "139DA58C20279588FD0BFB2336A3553471E6B28A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/oalejel\/Speech-gRPC-Streaming.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "190AC85DBA540F73F845BF61EBE2C8630434E3B4"
+    }
+  ]
+}

@@ -7,32 +7,28 @@
 //
 
 import UIKit
-import AVFoundation
 
-class StudentQRController: UIViewController {
+class StudentQRController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var qrView: UIView!
     
-    var captureSession: AVCaptureSession?
-    var previewLayer: AVCaptureVideoPreviewLayer?
-
+    @IBOutlet weak var codeTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        captureSession = AVCaptureSession()
-//        let captureInput = AVCaptureInput()
-//        captureSession?.addInput(captureInput)
-//        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-//        previewLayer?.frame = qrView.frame
-        
-//        view.layer.addSublayer(previewLayer!)
+        codeTextField.delegate = self
+
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
     }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
 
     /*

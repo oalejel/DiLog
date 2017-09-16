@@ -36,6 +36,8 @@
   [AudioController sharedInstance].delegate = self;
 }
 
+
+
 - (IBAction)recordAudio:(id)sender {
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
   [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
