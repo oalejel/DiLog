@@ -6,7 +6,7 @@
 
 target 'Speech' do
 
-  pod 'googleapis', :path => '.'
+  pod 'googleapis'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/RemoteConfig'

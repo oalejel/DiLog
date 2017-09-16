@@ -20,6 +20,7 @@
 #import "AudioController.h"
 #import "SpeechRecognitionService.h"
 #import "google/cloud/speech/v1/CloudSpeech.pbrpc.h"
+#import "Speech-Swift.h"
 
 #define SAMPLE_RATE 16000.0f
 
@@ -34,6 +35,8 @@
   [super viewDidLoad];
 
   [AudioController sharedInstance].delegate = self;
+   
+    [[DatabaseManager sharedInstance] setupDatabaseEntry];
 }
 
 
@@ -62,30 +65,35 @@
   for (int i = 0; i < frameCount; i++) {
     sum += abs(samples[i]);
   }
-  NSLog(@"audio %d %d", (int) frameCount, (int) (sum * 1.0 / frameCount));
+//  NSLog(@"audio %d %d", (int) frameCount, (int) (sum * 1.0 / frameCount));
 
   // We recommend sending samples in 100ms chunks
   int chunk_size = 0.1 /* seconds/chunk */ * SAMPLE_RATE * 2 /* bytes/sample */ ; /* bytes/chunk */
 
   if ([self.audioData length] > chunk_size) {
-    NSLog(@"SENDING");
+//    NSLog(@"SENDING");
     [[SpeechRecognitionService sharedInstance] streamAudioData:self.audioData
                                                 withCompletion:^(StreamingRecognizeResponse *response, NSError *error) {
                                                   if (error) {
                                                     NSLog(@"ERROR: %@", error);
                                                     _textView.text = [error localizedDescription];
+                                                      [self recordAudio:self];
                                                     [self stopAudio:nil];
                                                   } else if (response) {
                                                     BOOL finished = NO;
-                                                    NSLog(@"RESPONSE: %@", response);
+                                                    NSLog(@"RESPONSE: %@", response.resultsArray);
+                                                      
+                                                      
                                                     for (StreamingRecognitionResult *result in response.resultsArray) {
                                                       if (result.isFinal) {
                                                         finished = YES;
+                                                          
+                                                          [[DatabaseManager sharedInstance] postWithResponse: response]];
                                                       }
                                                     }
                                                     _textView.text = [response description];
                                                     if (finished) {
-                                                      [self stopAudio:nil];
+//                                                      [self stopAudio:nil];
                                                     }
                                                   }
                                                 }

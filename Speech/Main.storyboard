@@ -268,12 +268,13 @@
                     </view>
                     <connections>
                         <outlet property="codeTextField" destination="Qd4-Yg-SJu" id="8W8-5I-g0T"/>
+                        <segue destination="iip-g0-cbm" kind="show" identifier="showTeacherTranscript" id="zuv-yM-r6m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUA-Nh-6GN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ijG-CH-rDe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="609"/>
+            <point key="canvasLocation" x="1966" y="609"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PmN-LM-ch5">
@@ -288,7 +289,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="transcript of our translated text!!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-Yo-3Bx">
-                                <rect key="frame" x="16" y="28" width="343" height="497"/>
+                                <rect key="frame" x="16" y="31" width="343" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -297,8 +298,8 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="leading" secondItem="Y6w-jL-omv" secondAttribute="leadingMargin" id="FWO-V5-BuE"/>
-                            <constraint firstItem="LEa-Yo-3Bx" firstAttribute="top" secondItem="sRs-Su-xI9" secondAttribute="bottom" constant="8" id="NUW-YT-d2q"/>
-                            <constraint firstItem="zj7-1M-CSM" firstAttribute="top" secondItem="LEa-Yo-3Bx" secondAttribute="bottom" constant="142" id="RAV-GB-3EM"/>
+                            <constraint firstItem="LEa-Yo-3Bx" firstAttribute="top" secondItem="sRs-Su-xI9" secondAttribute="bottom" constant="11" id="NUW-YT-d2q"/>
+                            <constraint firstItem="zj7-1M-CSM" firstAttribute="top" secondItem="LEa-Yo-3Bx" secondAttribute="bottom" constant="139" id="RAV-GB-3EM"/>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="trailing" secondItem="Y6w-jL-omv" secondAttribute="trailingMargin" id="WqR-ds-2fF"/>
                         </constraints>
                     </view>

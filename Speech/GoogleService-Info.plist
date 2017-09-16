@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>658711697482-jqkkblu9li71j8devekv3vb03ub2n8d4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.658711697482-jqkkblu9li71j8devekv3vb03ub2n8d4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC3vt-kEcdOqVtMlC-xsXxgy-AAxxOzsCg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>658711697482</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.google.speak</string>
+	<key>PROJECT_ID</key>
+	<string>bigredproject-180101</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bigredproject-180101.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<false/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:658711697482:ios:ee605e8e2efa3405</string>
+	<key>DATABASE_URL</key>
+	<string>https://bigredproject-180101.firebaseio.com</string>
+</dict>
+</plist>
