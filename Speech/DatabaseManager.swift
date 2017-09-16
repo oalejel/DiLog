@@ -12,6 +12,7 @@ import Firebase
 
 @objc class DatabaseManager: NSObject {
     @objc static let sharedInstance: DatabaseManager! = DatabaseManager()
+    @objc public var streamingLanguageCode: String! = "en-US"
     
     var ref: DatabaseReference!
     var lastEntryIndex = 0
@@ -29,7 +30,7 @@ import Firebase
     
     func setupDatabaseListener() {
         ref.child("instructors").child(instructorCode).observe(.childAdded, with: { (snapshot) in
-            print(snapshot)
+            print("snapshot key: " + (snapshot.value as! String))
         })
     }
     

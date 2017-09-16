@@ -56,6 +56,10 @@
   [[SpeechRecognitionService sharedInstance] stopStreaming];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self stopAudio:self];
+}
+
 - (void) processSampleData:(NSData *)data
 {
   [self.audioData appendData:data];
@@ -107,6 +111,9 @@
      ];
     self.audioData = [[NSMutableData alloc] init];
   }
+    
+
+    
 }
 
 @end

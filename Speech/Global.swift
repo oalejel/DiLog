@@ -17,5 +17,3 @@ extension UIButton {
 }
 
 public let ThemePurple = UIColor(red: 0.463, green: 0.29, blue: 0.902, alpha: 1)
-
-public var streamingLanguageCode: String! = "en-US"

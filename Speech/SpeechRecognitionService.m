@@ -19,6 +19,7 @@
 #import <GRPCClient/GRPCCall.h>
 #import <RxLibrary/GRXBufferedPipe.h>
 #import <ProtoRPC/ProtoRPC.h>
+#import "Speech-Swift.h"
 
 #define API_KEY @"AIzaSyB2H1wm89e_Bcb3O1iNGmLzW9v7dP96UKg"
 #define HOST @"speech.googleapis.com"
@@ -71,7 +72,7 @@
     recognitionConfig.encoding = RecognitionConfig_AudioEncoding_Linear16;
     recognitionConfig.sampleRateHertz = self.sampleRate;
       
-    recognitionConfig.languageCode = @"en-US";
+      recognitionConfig.languageCode = [[DatabaseManager sharedInstance] streamingLanguageCode];
 
       recognitionConfig.maxAlternatives = 30;
 

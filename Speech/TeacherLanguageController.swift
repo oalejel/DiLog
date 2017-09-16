@@ -58,8 +58,8 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
         // Pass the selected object to the new view controller.
         
         let langString = pickerView(languagePicker, titleForRow: languagePicker.selectedRow(inComponent: 0), forComponent: 0) ?? "English"
-        streamingLanguageCode = languageCodes[langString]
-        print(streamingLanguageCode)
+        DatabaseManager.sharedInstance.streamingLanguageCode = languageCodes[langString]
+        print(DatabaseManager.sharedInstance.streamingLanguageCode)
     }
  
 
