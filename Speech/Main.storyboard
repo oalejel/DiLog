@@ -206,31 +206,32 @@
                                     <segue destination="Upg-2e-NoS" kind="unwind" unwindAction="rewindToTeacherLanguageWithSegue:" id="400-0F-YBB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO7-Wv-yha" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
-                                <rect key="frame" x="38" y="410" width="298" height="45"/>
-                                <color key="backgroundColor" red="0.89712611610000004" green="0.1232700893" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOG-Vc-k4a" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="16" y="405" width="343" height="57"/>
+                                <color key="backgroundColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Wfl-AJ-DLH"/>
+                                    <constraint firstAttribute="height" constant="57" id="bZJ-y2-89J"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                 <state key="normal" title="Stream">
-                                    <color key="titleColor" red="0.96978109140000002" green="0.96978109140000002" blue="0.96978109140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordAudio:" destination="Dxb-4z-iAw" eventType="touchUpInside" id="3Jg-5O-fra"/>
+                                    <action selector="recordAudio:" destination="Dxb-4z-iAw" eventType="touchUpInside" id="3li-Wi-zzh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JO7-Wv-yha" firstAttribute="top" secondItem="nhk-TT-vgR" secondAttribute="bottom" constant="28" id="1gC-fx-LKC"/>
                             <constraint firstItem="nhk-TT-vgR" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="6B0-oZ-FAt"/>
                             <constraint firstItem="t6n-7h-a22" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="836-LQ-BYO"/>
                             <constraint firstItem="nhk-TT-vgR" firstAttribute="centerY" secondItem="EeU-tB-227" secondAttribute="centerY" constant="-4" id="8Ek-3c-OqQ"/>
                             <constraint firstItem="nhk-TT-vgR" firstAttribute="top" secondItem="t6n-7h-a22" secondAttribute="bottom" constant="8" id="Blh-Bc-Ymn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nhk-TT-vgR" secondAttribute="trailing" id="MM0-jp-ocr"/>
-                            <constraint firstItem="JO7-Wv-yha" firstAttribute="centerX" secondItem="EeU-tB-227" secondAttribute="centerX" id="T1I-sj-eSv"/>
+                            <constraint firstItem="vOG-Vc-k4a" firstAttribute="trailing" secondItem="EeU-tB-227" secondAttribute="trailingMargin" id="RMU-hV-Lqj"/>
+                            <constraint firstItem="vOG-Vc-k4a" firstAttribute="top" secondItem="nhk-TT-vgR" secondAttribute="bottom" constant="23" id="Tm7-0s-bP4"/>
                             <constraint firstItem="60H-qk-NDC" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="a2q-ZA-Kfi"/>
-                            <constraint firstItem="JO7-Wv-yha" firstAttribute="width" secondItem="nhk-TT-vgR" secondAttribute="width" constant="-45" id="i7d-hY-eXh"/>
+                            <constraint firstItem="vOG-Vc-k4a" firstAttribute="leading" secondItem="EeU-tB-227" secondAttribute="leadingMargin" id="jtf-ce-DOU"/>
                             <constraint firstItem="k1O-P6-Jzb" firstAttribute="top" secondItem="60H-qk-NDC" secondAttribute="bottom" constant="20" id="qIp-YZ-hRv"/>
                             <constraint firstItem="nhk-TT-vgR" firstAttribute="centerX" secondItem="EeU-tB-227" secondAttribute="centerX" id="yVg-9T-xjz"/>
                         </constraints>
@@ -238,12 +239,13 @@
                     <connections>
                         <outlet property="backButton" destination="60H-qk-NDC" id="Yqz-Bf-sFc"/>
                         <outlet property="codeLabel" destination="nhk-TT-vgR" id="tLk-Z8-BxG"/>
+                        <outlet property="recordButton" destination="vOG-Vc-k4a" id="caD-y9-Pau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REq-7d-A0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Upg-2e-NoS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2785" y="-37"/>
+            <point key="canvasLocation" x="2784.8000000000002" y="-37.331334332833585"/>
         </scene>
         <!--StudentQR Controller-->
         <scene sceneID="HhV-mg-eMZ">

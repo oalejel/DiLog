@@ -30,6 +30,9 @@
 @property (nonatomic, strong) NSMutableData *audioData;
 @property (weak, nonatomic) IBOutlet SqueezeButton *backButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
+
+
 @end
 
 @implementation StreamViewController
@@ -48,8 +51,6 @@
     [[self.codeLabel layer] setMasksToBounds:YES];
     
     [self.backButton setBordered];
-    
-    
 }
 
 - (IBAction)recordAudio:(id)sender {
