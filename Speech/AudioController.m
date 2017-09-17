@@ -249,6 +249,9 @@ static OSStatus playbackCallback(void *inRefCon,
       return status;
     }
   }
+    if (status == 0) {
+        NSLog(@"((((((((STATUS EQUALS ZEROOOOOOOOOO))))))))))");
+    }
 
   // Initialize the RemoteIO unit
   status = AudioUnitInitialize(self->remoteIOUnit);

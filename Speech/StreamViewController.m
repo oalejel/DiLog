@@ -50,6 +50,8 @@
     [[self.codeLabel layer] setCornerRadius:10];
     [[self.codeLabel layer] setMasksToBounds:YES];
     
+    [[self.recordButton titleLabel] setText:@"Streaming..."];
+    
     [self.backButton setBordered];
 }
 
