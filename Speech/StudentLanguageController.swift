@@ -45,7 +45,7 @@ class StudentLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
         
         let langString = pickerView(languagePicker, titleForRow: languagePicker.selectedRow(inComponent: 0), forComponent: 0) ?? "English"
         DatabaseManager.sharedInstance.studentLanguageCode = speechLanguageCodes[langString]
-        print(DatabaseManager.sharedInstance.studentLanguageCode)
+        print("language code from picker: " + DatabaseManager.sharedInstance.studentLanguageCode)
     }
     
 

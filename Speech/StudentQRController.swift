@@ -49,6 +49,7 @@ class StudentQRController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitPressed(_ sender: SqueezeButton) {
         
+        DatabaseManager.sharedInstance.instructorCode = codeTextField.text!
         //if we have a functional code
         instructorCodeExists(code: codeTextField.text, closure: {
             self.performSegue(withIdentifier: "showLanguagePicker", sender: self)
@@ -96,7 +97,6 @@ class StudentQRController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-            
             DatabaseManager.sharedInstance.setupDatabaseListener()
             
             

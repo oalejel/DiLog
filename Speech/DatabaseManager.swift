@@ -13,13 +13,12 @@ import Firebase
 @objc class DatabaseManager: NSObject {
     @objc static let sharedInstance: DatabaseManager! = DatabaseManager()
     //do not use this in student mode – you should eventually make this code safer
-    @objc public var streamingLanguageCode: String! = "en-US"
+    @objc public var streamingLanguageCode: String = "en-US"
     @objc public var studentLanguageCode: String! = "es-MX"
     
     var translater: ROGoogleTranslate!
     
     var transcriptController: TranscriptViewController? = nil
-    
     
     var ref: DatabaseReference!
     var lastEntryIndex = 0
@@ -63,20 +62,22 @@ import Firebase
         
 //        streamingLanguageCode = (ref.child("instructors").child(instructorCode).child("lang") as? String) ?? "en-US"
 //        print("----- THE LANGUAGE CODE::::: " + streamingLanguageCode);
-        
-        ref.child("instructors").child(instructorCode).child("lang").observeSingleEvent(of: .value, with: { (snapshot) in
-            print("our langauge is: " + (snapshot.value as? String ?? "errrrrrr"))
-            self.streamingLanguageCode = snapshot.value as? String ?? "en-US"
+        //ref.child("instructors").observeSingleE
+        ref.child("instructors").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let d = snapshot.value as! [String:[String:String]]
+            print(d[self.instructorCode])
+//            self.streamingLanguageCode = arr.object(forKey: "lang") as? String ?? "en-US"
+            self.streamingLanguageCode = d[self.instructorCode]!["lang"]!
+            print("our langauge is: ")
+            print(self.streamingLanguageCode)//((snapshot.value as! NSArray).object(at: ) as? String ?? "errrrrrr"))
         }) { (error) in
             print(error)
         }
         
-        
-        
         ref.child("instructors").child(instructorCode).observe(.childAdded, with: { (snapshot) in
             let untranslatedString = (snapshot.value as! String)
             print("utranslated input: " + untranslatedString)
-            
             
             let params = ROGoogleTranslateParams(source: self.streamingLanguageCode, target: self.studentLanguageCode, text: untranslatedString)
             self.translater.translate(params: params, callback: { (translatedString) in
@@ -86,8 +87,6 @@ import Firebase
                     tc.addToTextField(s: translatedString)
                 }
             })
-            
-            
         })
     }
     
@@ -97,7 +96,6 @@ import Firebase
         ref.child("instructors").child(instructorCode).setValue(transcriptDict)
         lastEntryIndex += 1
     }
-    
     
 //    func sendTranscriptClip
 }

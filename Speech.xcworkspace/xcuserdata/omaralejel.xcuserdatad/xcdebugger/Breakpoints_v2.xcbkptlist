@@ -42,45 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Speech/DatabaseManager.swift"
-            timestampString = "527315213.240371"
+            timestampString = "527319165.121685"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "setupDatabaseListener()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Speech.DatabaseManager.setupDatabaseListener () -&gt; ()"
-                  moduleName = "Speech"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omaralejel/Desktop/Speech-gRPC-Streaming/Speech/DatabaseManager.swift"
-                  timestampString = "527314922.189898"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "74">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Speech.DatabaseManager.(setupDatabaseListener () -&gt; ()).(closure #1)"
-                  moduleName = "Speech"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omaralejel/Desktop/Speech-gRPC-Streaming/Speech/DatabaseManager.swift"
-                  timestampString = "527314922.193241"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Speech/DatabaseManager.swift"
-            timestampString = "527315213.240371"
+            timestampString = "527318098.538297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "generateKey(length:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Speech/StudentQRController.swift"
-            timestampString = "527313043.355834"
+            timestampString = "527320419.209656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "shouldPerformSegue(withIdentifier:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Speech/DatabaseManager.swift"
-            timestampString = "527315213.240371"
+            timestampString = "527318098.538297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "setupDatabaseEntry()"
             landmarkType = "7">
          </BreakpointContent>

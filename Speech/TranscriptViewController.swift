@@ -36,7 +36,16 @@ class TranscriptViewController: UIViewController {
     
     
     func addToTextField(s: String) {
-        textView.text.append(s)
+        var characters = Array(s.characters)
+        let char1 = characters[0]
+        let upperChar1 = "\(char1)".uppercased()
+        characters[0] = upperChar1
+        
+        
+        DispatchQueue.main.async {
+            self.textView.text.append(s)
+        }
+        
     }
 
 
