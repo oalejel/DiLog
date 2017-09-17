@@ -243,7 +243,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REq-7d-A0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Upg-2e-NoS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="-37.331334332833585"/>
+            <point key="canvasLocation" x="2785" y="-37"/>
         </scene>
         <!--StudentQR Controller-->
         <scene sceneID="HhV-mg-eMZ">
@@ -257,10 +257,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qd4-Yg-SJu">
-                                <rect key="frame" x="16" y="192" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="------" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qd4-Yg-SJu">
+                                <rect key="frame" x="16" y="192" width="343" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="x2n-m9-dRa"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input the instructor's streaming code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-Qc-HTN">
@@ -283,9 +286,26 @@
                                     <segue destination="ijG-CH-rDe" kind="unwind" unwindAction="unwindToRootWithSegue:" id="ClM-y5-vgi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgX-ga-Mxc" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="258" y="602" width="101" height="45"/>
+                                <color key="backgroundColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="3Of-zW-ewm"/>
+                                    <constraint firstAttribute="height" constant="45" id="rBB-to-Ljp"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="kXk-Fn-rex" eventType="touchUpInside" id="55q-MO-drm"/>
+                                    <segue destination="g86-wu-BMe" kind="show" identifier="showLanguagePicker" id="rSX-Mq-lKr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="OgX-ga-Mxc" secondAttribute="trailing" id="2Dx-hQ-fEi"/>
+                            <constraint firstItem="4Il-Du-c9u" firstAttribute="top" secondItem="OgX-ga-Mxc" secondAttribute="bottom" constant="20" id="B7w-u4-WIM"/>
                             <constraint firstItem="4Il-Du-c9u" firstAttribute="top" secondItem="bi1-kr-xsq" secondAttribute="bottom" constant="20" id="NPe-uC-fuy"/>
                             <constraint firstItem="Qd4-Yg-SJu" firstAttribute="top" secondItem="tZx-Qc-HTN" secondAttribute="bottom" constant="8" id="aYR-UX-AH7"/>
                             <constraint firstItem="bi1-kr-xsq" firstAttribute="leading" secondItem="25i-mg-C5H" secondAttribute="leadingMargin" id="axU-mM-oM6"/>
@@ -298,18 +318,100 @@
                     <connections>
                         <outlet property="backButton" destination="bi1-kr-xsq" id="o7I-mo-qIi"/>
                         <outlet property="codeTextField" destination="Qd4-Yg-SJu" id="8W8-5I-g0T"/>
-                        <segue destination="iip-g0-cbm" kind="show" identifier="showTeacherTranscript" id="zuv-yM-r6m"/>
+                        <outlet property="submitButton" destination="OgX-ga-Mxc" id="hU4-Ls-h7H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUA-Nh-6GN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ijG-CH-rDe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="609"/>
+            <point key="canvasLocation" x="1965.5999999999999" y="608.54572713643188"/>
         </scene>
-        <!--View Controller-->
+        <!--Student Language Controller-->
+        <scene sceneID="lhS-be-ENG">
+            <objects>
+                <viewController id="g86-wu-BMe" customClass="StudentLanguageController" customModule="Speech" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9gM-lq-Dic"/>
+                        <viewControllerLayoutGuide type="bottom" id="V09-to-oce"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TZU-qp-yVk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVZ-sJ-O9y">
+                                <rect key="frame" x="0.0" y="211.5" width="375" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your first language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDm-0F-O5k">
+                                <rect key="frame" x="16" y="188.5" width="224" height="25"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almost done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHH-1Z-yDl">
+                                <rect key="frame" x="102.5" y="98" width="171" height="35.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="26"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIa-96-YGU" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="258" y="602" width="101" height="45"/>
+                                <color key="backgroundColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0wr-pZ-TrW"/>
+                                    <constraint firstAttribute="width" constant="101" id="gbF-57-xVK"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iip-g0-cbm" kind="show" identifier="showTranscript" id="8sR-8u-W3l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eao-Uw-eVY" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="121" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="flz-fe-h4f"/>
+                                    <constraint firstAttribute="height" constant="45" id="iNe-B2-46W"/>
+                                </constraints>
+                                <state key="normal" title="Exit Session">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hQk-TX-nAo" kind="unwind" unwindAction="unwindToCodeControllerWithSegue:" id="DxS-I1-512"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cVZ-sJ-O9y" secondAttribute="trailing" id="3LA-8r-I07"/>
+                            <constraint firstItem="uIa-96-YGU" firstAttribute="trailing" secondItem="TZU-qp-yVk" secondAttribute="trailingMargin" id="9v1-MU-WGO"/>
+                            <constraint firstItem="V09-to-oce" firstAttribute="top" secondItem="uIa-96-YGU" secondAttribute="bottom" constant="20" id="I12-T7-7Ni"/>
+                            <constraint firstItem="eao-Uw-eVY" firstAttribute="leading" secondItem="TZU-qp-yVk" secondAttribute="leadingMargin" id="Pr9-ax-w9o"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="GDm-0F-O5k" secondAttribute="leading" id="Tpi-vQ-2HK"/>
+                            <constraint firstItem="cVZ-sJ-O9y" firstAttribute="leading" secondItem="TZU-qp-yVk" secondAttribute="leading" id="Z9a-Yz-knD"/>
+                            <constraint firstItem="KHH-1Z-yDl" firstAttribute="centerX" secondItem="TZU-qp-yVk" secondAttribute="centerX" id="gCZ-wu-f7k"/>
+                            <constraint firstItem="GDm-0F-O5k" firstAttribute="top" secondItem="KHH-1Z-yDl" secondAttribute="bottom" constant="55" id="kSB-YQ-yQK"/>
+                            <constraint firstItem="cVZ-sJ-O9y" firstAttribute="centerY" secondItem="TZU-qp-yVk" secondAttribute="centerY" constant="-14" id="qJO-uj-oka"/>
+                            <constraint firstItem="cVZ-sJ-O9y" firstAttribute="top" secondItem="GDm-0F-O5k" secondAttribute="bottom" constant="-2" id="t6y-P3-KJF"/>
+                            <constraint firstItem="V09-to-oce" firstAttribute="top" secondItem="eao-Uw-eVY" secondAttribute="bottom" constant="20" id="ydx-F8-TIg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lXI-NZ-awQ"/>
+                    <connections>
+                        <outlet property="backButton" destination="eao-Uw-eVY" id="nrR-dU-ikk"/>
+                        <outlet property="languagePicker" destination="cVZ-sJ-O9y" id="VLL-GN-u4l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPU-o9-RtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hQk-TX-nAo" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2785" y="609"/>
+        </scene>
+        <!--Transcript View Controller-->
         <scene sceneID="PmN-LM-ch5">
             <objects>
-                <viewController id="iip-g0-cbm" sceneMemberID="viewController">
+                <viewController id="iip-g0-cbm" customClass="TranscriptViewController" customModule="Speech" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sRs-Su-xI9"/>
                         <viewControllerLayoutGuide type="bottom" id="zj7-1M-CSM"/>
@@ -318,25 +420,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="transcript of our translated text!!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-Yo-3Bx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="transcript of our translated text!!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-Yo-3Bx">
                                 <rect key="frame" x="16" y="31" width="343" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suf-iN-Vye" customClass="SqueezeButton" customModule="Speech" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="121" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="c4S-fA-g79"/>
+                                    <constraint firstAttribute="width" constant="121" id="qec-8L-kwT"/>
+                                </constraints>
+                                <state key="normal" title="Exit Session">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.2901960784" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitPressed:" destination="iip-g0-cbm" eventType="touchUpInside" id="XzC-Ia-ytN"/>
+                                    <segue destination="1AT-kz-vVG" kind="unwind" unwindAction="unwindToCodeControllerWithSegue:" id="Zdj-Oy-FeG"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="leading" secondItem="Y6w-jL-omv" secondAttribute="leadingMargin" id="FWO-V5-BuE"/>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="top" secondItem="sRs-Su-xI9" secondAttribute="bottom" constant="11" id="NUW-YT-d2q"/>
-                            <constraint firstItem="zj7-1M-CSM" firstAttribute="top" secondItem="LEa-Yo-3Bx" secondAttribute="bottom" constant="139" id="RAV-GB-3EM"/>
+                            <constraint firstItem="zj7-1M-CSM" firstAttribute="top" secondItem="LEa-Yo-3Bx" secondAttribute="bottom" priority="999" constant="139" id="RAV-GB-3EM"/>
                             <constraint firstItem="LEa-Yo-3Bx" firstAttribute="trailing" secondItem="Y6w-jL-omv" secondAttribute="trailingMargin" id="WqR-ds-2fF"/>
+                            <constraint firstItem="suf-iN-Vye" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LEa-Yo-3Bx" secondAttribute="bottom" constant="20" id="fP4-3D-rby"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="suf-iN-Vye" secondAttribute="leading" id="iah-da-gCs"/>
+                            <constraint firstItem="zj7-1M-CSM" firstAttribute="top" secondItem="suf-iN-Vye" secondAttribute="bottom" constant="20" id="oX7-US-OKD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="exitButton" destination="suf-iN-Vye" id="Lg8-Ad-6M1"/>
+                        <outlet property="textView" destination="LEa-Yo-3Bx" id="h1f-zh-f1Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ouh-yR-y40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1AT-kz-vVG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="608.54572713643188"/>
+            <point key="canvasLocation" x="3633" y="609"/>
         </scene>
     </scenes>
 </document>

@@ -14,51 +14,87 @@ import Firebase
     @objc static let sharedInstance: DatabaseManager! = DatabaseManager()
     //do not use this in student mode – you should eventually make this code safer
     @objc public var streamingLanguageCode: String! = "en-US"
-    @objc public var studentLangaugeCode: String! = "es-MX"
+    @objc public var studentLanguageCode: String! = "es-MX"
     
     var translater: ROGoogleTranslate!
+    
+    var transcriptController: TranscriptViewController? = nil
     
     
     var ref: DatabaseReference!
     var lastEntryIndex = 0
-    let instructorCode = "a2b446"
+    //this code is just a default value!
+    @objc public var instructorCode = "a2b446"
     
-    var transcriptArray: [String:String] = [:]
+    var transcriptDict: [String:String] = [:]
     
     override init() {
         ref = Database.database().reference()
     }
     
     @objc public func setupDatabaseEntry() {
-        ref.child("instructors").child(instructorCode)
+        instructorCode = generateKey(length: 6)
+        transcriptDict["lang"] = streamingLanguageCode
+        ref.child("instructors").child(instructorCode).setValue(["lang":streamingLanguageCode])
+    }
+    
+    @objc public func clearSession() {
+        ref.child("instructors").child(instructorCode).removeValue()
+    }
+    
+     func generateKey(length: Int) -> String {
+        let characters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "9"]
+        
+        var outputKey = ""
+        
+        for _ in 0..<length {
+            outputKey += characters[Int(arc4random()) % characters.count]
+        }
+        
+        return outputKey
     }
     
     func setupDatabaseListener() {
          translater = ROGoogleTranslate()
         
+        //setup streamingLanguageCode
+//        let langDatabaseRef = ref.child("instructors").child(instructorCode).child("lang").key
+//        print("&&&&" + langDatabaseRef)
+        
+//        streamingLanguageCode = (ref.child("instructors").child(instructorCode).child("lang") as? String) ?? "en-US"
+//        print("----- THE LANGUAGE CODE::::: " + streamingLanguageCode);
+        
+        ref.child("instructors").child(instructorCode).child("lang").observeSingleEvent(of: .value, with: { (snapshot) in
+            print("our langauge is: " + (snapshot.value as? String ?? "errrrrrr"))
+            self.streamingLanguageCode = snapshot.value as? String ?? "en-US"
+        }) { (error) in
+            print(error)
+        }
+        
+        
+        
         ref.child("instructors").child(instructorCode).observe(.childAdded, with: { (snapshot) in
             let untranslatedString = (snapshot.value as! String)
-            print("snapshot key: " + untranslatedString)
+            print("utranslated input: " + untranslatedString)
             
             
-            
-            
-            // NEED TO GET THE SPEAKER's LANGUAGE ON START!!!
-            let teacherLang = self.streamingLanguageCode//WARNING
-            
-            
-            
-            let params = ROGoogleTranslateParams(source: teacherLang!, target: self.studentLangaugeCode, text: untranslatedString)
+            let params = ROGoogleTranslateParams(source: self.streamingLanguageCode, target: self.studentLanguageCode, text: untranslatedString)
             self.translater.translate(params: params, callback: { (translatedString) in
                 print("> TRANSLATED" + translatedString)
+                
+                if let tc = self.transcriptController {
+                    tc.addToTextField(s: translatedString)
+                }
             })
+            
+            
         })
     }
     
     @objc public func post(text: String) {
-        transcriptArray["\(lastEntryIndex)"] = text
+        transcriptDict["\(lastEntryIndex)"] = text
 ///!!!make this line not have to reset the entire array every tiem -- NOT EFFICENT!!
-        ref.child("instructors").child(instructorCode).setValue(transcriptArray)
+        ref.child("instructors").child(instructorCode).setValue(transcriptDict)
         lastEntryIndex += 1
     }
     

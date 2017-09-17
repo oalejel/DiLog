@@ -1,24 +1,18 @@
 //
-//  TeacherLanguageController.swift
-//  speak2me
+//  StudentLanguageController.swift
+//  Speech
 //
-//  Created by Omar Al-Ejel on 9/15/17.
-//  Copyright © 2017 Omar Al-Ejel. All rights reserved.
+//  Created by Omar Al-Ejel on 9/16/17.
+//  Copyright © 2017 Google. All rights reserved.
 //
 
 import UIKit
 
-class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-    //TODO: implement teh text field capability later
+class StudentLanguageController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var languagePicker: UIPickerView!
-    
     @IBOutlet weak var backButton: SqueezeButton!
-    
-    //please organize these alphabetically!!!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,15 +22,12 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
         languagePicker.delegate = self
         
         backButton.setBordered()
-        
     }
-    
-    
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return speechLanguageCodes.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return Array(speechLanguageCodes.keys)[row]
     }
@@ -44,11 +35,6 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
-    @IBAction func rewindToTeacherLanguage(segue: UIStoryboardSegue) {
-        print("rewinding to teacher lang vc")
-    }
-
     
     // MARK: - Navigation
 
@@ -58,9 +44,9 @@ class TeacherLanguageController: UIViewController, UIPickerViewDelegate, UIPicke
         // Pass the selected object to the new view controller.
         
         let langString = pickerView(languagePicker, titleForRow: languagePicker.selectedRow(inComponent: 0), forComponent: 0) ?? "English"
-        DatabaseManager.sharedInstance.streamingLanguageCode = speechLanguageCodes[langString]
-        print(DatabaseManager.sharedInstance.streamingLanguageCode)
+        DatabaseManager.sharedInstance.studentLanguageCode = speechLanguageCodes[langString]
+        print(DatabaseManager.sharedInstance.studentLanguageCode)
     }
- 
+    
 
 }

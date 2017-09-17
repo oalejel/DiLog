@@ -17,3 +17,5 @@ extension UIButton {
 }
 
 public let ThemePurple = UIColor(red: 0.463, green: 0.29, blue: 0.902, alpha: 1)
+
+public let speechLanguageCodes = ["English":"en-US", "Spanish (Español)":"es-MX", "French (Français)":"fr-FR", "German (Deutsch)":"de-DE", "Mandarin (國語 (台灣))":"cmn-Hant-TW"]

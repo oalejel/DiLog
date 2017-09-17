@@ -37,13 +37,19 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+    
+    
   [AudioController sharedInstance].delegate = self;
    
     [[DatabaseManager sharedInstance] setupDatabaseEntry];
+    //THE CODE WILL ONLY BE AVAILABLE AFTER SETTING UP TEH DATABASE ENTRY
+    [self.codeLabel setText:[DatabaseManager sharedInstance].instructorCode];
     [[self.codeLabel layer] setCornerRadius:10];
     [[self.codeLabel layer] setMasksToBounds:YES];
     
     [self.backButton setBordered];
+    
+    
 }
 
 - (IBAction)recordAudio:(id)sender {
@@ -62,6 +68,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [[DatabaseManager sharedInstance] clearSession];
     [self stopAudio:self];
 }
 

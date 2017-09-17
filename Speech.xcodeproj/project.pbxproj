@@ -13,6 +13,8 @@
 		3D0E0AD91F6DA90100AA6373 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D0E0AD81F6DA90100AA6373 /* OpenSans-Regular.ttf */; };
 		3D0E0ADB1F6DA91000AA6373 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D0E0ADA1F6DA91000AA6373 /* OpenSans-Bold.ttf */; };
 		3D0E0ADD1F6DD08D00AA6373 /* ROGoogleTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0E0ADC1F6DD08D00AA6373 /* ROGoogleTranslate.swift */; };
+		3D0E0ADF1F6DEDFE00AA6373 /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0E0ADE1F6DEDFE00AA6373 /* TranscriptViewController.swift */; };
+		3D0E0B231F6E065100AA6373 /* StudentLanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0E0B221F6E065100AA6373 /* StudentLanguageController.swift */; };
 		3D7DF3A91F6D2013002CC4DE /* SqueezeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7DF3A81F6D2013002CC4DE /* SqueezeButton.swift */; };
 		3D7DF3AB1F6D2DF0002CC4DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7DF3AA1F6D2DF0002CC4DE /* ViewController.swift */; };
 		3DC7BD3E1F6CD900006E8B96 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC7BD3D1F6CD900006E8B96 /* Global.swift */; };
@@ -36,6 +38,8 @@
 		3D0E0AD81F6DA90100AA6373 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		3D0E0ADA1F6DA91000AA6373 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		3D0E0ADC1F6DD08D00AA6373 /* ROGoogleTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROGoogleTranslate.swift; sourceTree = "<group>"; };
+		3D0E0ADE1F6DEDFE00AA6373 /* TranscriptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
+		3D0E0B221F6E065100AA6373 /* StudentLanguageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLanguageController.swift; sourceTree = "<group>"; };
 		3D7DF3A81F6D2013002CC4DE /* SqueezeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqueezeButton.swift; sourceTree = "<group>"; };
 		3D7DF3AA1F6D2DF0002CC4DE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3DC7BD3C1F6CD8FF006E8B96 /* Speech-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Speech-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				3DC7BD3F1F6CDA53006E8B96 /* TeacherLanguageController.swift */,
 				3D025E5D1F6D5EF8005A392A /* DatabaseManager.swift */,
 				3DC7BD411F6CF097006E8B96 /* StudentQRController.swift */,
+				3D0E0B221F6E065100AA6373 /* StudentLanguageController.swift */,
+				3D0E0ADE1F6DEDFE00AA6373 /* TranscriptViewController.swift */,
 				3D7DF3A81F6D2013002CC4DE /* SqueezeButton.swift */,
 				3DC7BD3D1F6CD900006E8B96 /* Global.swift */,
 			);
@@ -292,6 +298,7 @@
 				3D7DF3AB1F6D2DF0002CC4DE /* ViewController.swift in Sources */,
 				3D025E5E1F6D5EF8005A392A /* DatabaseManager.swift in Sources */,
 				D379BE381C99FEC70049D06F /* AudioController.m in Sources */,
+				3D0E0B231F6E065100AA6373 /* StudentLanguageController.swift in Sources */,
 				3DC7BD401F6CDA53006E8B96 /* TeacherLanguageController.swift in Sources */,
 				3D7DF3A91F6D2013002CC4DE /* SqueezeButton.swift in Sources */,
 				3DC7BD421F6CF097006E8B96 /* StudentQRController.swift in Sources */,
@@ -300,6 +307,7 @@
 				D34C17D11C948F5700D69BCA /* AppDelegate.m in Sources */,
 				D34C17CE1C948F5700D69BCA /* main.m in Sources */,
 				3D0E0ADD1F6DD08D00AA6373 /* ROGoogleTranslate.swift in Sources */,
+				3D0E0ADF1F6DEDFE00AA6373 /* TranscriptViewController.swift in Sources */,
 				D3FFBC371C96208B00268A5F /* SpeechRecognitionService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

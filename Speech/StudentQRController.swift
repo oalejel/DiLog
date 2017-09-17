@@ -13,46 +13,93 @@ class StudentQRController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var codeTextField: UITextField!
     
+    @IBOutlet weak var submitButton: SqueezeButton!
     @IBOutlet weak var backButton: SqueezeButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         codeTextField.delegate = self
-        DatabaseManager.sharedInstance.setupDatabaseListener()
 
         // Do any additional setup after loading the view.
         
         backButton.setBordered()
+        
+        codeTextField.layer.cornerRadius = 5
+        codeTextField.layer.masksToBounds = true
+        
+        codeTextField.layer.borderColor = ThemePurple.cgColor
+        codeTextField.layer.borderWidth = 3
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
     }
 
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        instructorCodeExists(code: textField.text)
+    
         textField.resignFirstResponder()
         return true
     }
     
-    func instructorCodeExists(code: String?) -> Bool {
-        if let codeString = code {
-            
-            //performSegue(withIdentifier: "showTeacherTranscript", sender: nil)
-        }
+    @IBAction func unwindToCodeController(segue: UIStoryboardSegue) {
+        print("unwinding")
+    }
+    
+    @IBAction func submitPressed(_ sender: SqueezeButton) {
         
-        return false
+        //if we have a functional code
+        instructorCodeExists(code: codeTextField.text, closure: {
+            self.performSegue(withIdentifier: "showLanguagePicker", sender: self)
+        })
+    }
+    
+    
+    func instructorCodeExists(code: String?, closure: @escaping () -> Void) {
+        if let codeString = code {
+            DatabaseManager.sharedInstance.ref.child("instructors").observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                print("))))))))))))))))))))))))")
+                
+                print(snapshot.value!)
+                let dict = snapshot.value! as! NSDictionary
+                print(dict.object(forKey: codeString) ?? "seseseses")
+                if dict.object(forKey: codeString) != nil {
+                    closure()
+                }
+                
+                
+            }, withCancel: { (error) in
+                print(error)
+            })
+            
+            
+        }
     }
 
     
     // MARK: - Navigation
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showLanguagePicker" {
+             return false //return false for now
+        }
+        
+        return true
+    }
+    
+    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "showTeacherTranscript") {
+        
             
-        }
+            DatabaseManager.sharedInstance.setupDatabaseListener()
+            
+            
     }
  
 
