@@ -13,6 +13,8 @@ class TranscriptViewController: UIViewController {
 
     @IBOutlet weak var exitButton: SqueezeButton!
     
+    var numSentences = 0
+    
     var lastTextAppendMillis = Date().timeIntervalSince1970
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +35,38 @@ class TranscriptViewController: UIViewController {
         DatabaseManager.sharedInstance.transcriptController = self
     }
     
-    
-    
+
     func addToTextField(s: String) {
+        LanguageSpeaker.sharedInstance.speak(s: s, language: DatabaseManager.sharedInstance.studentLanguageCode)
+        
         var characters = Array(s.characters)
         let char1 = characters[0]
         let upperChar1 = "\(char1)".uppercased()
-        characters[0] = upperChar1
+        characters[0] = Array(upperChar1.characters)[0]
         
-        
-        DispatchQueue.main.async {
-            self.textView.text.append(s)
+        var reformattedString = ""
+        for c in characters {
+            reformattedString.append(c)
         }
         
+        reformattedString.append(". ")
+        
+        if numSentences % 3 == 0 && numSentences != 0 {
+            reformattedString.append("\n\n")
+        }
+        
+        DispatchQueue.main.async {
+            self.textView.text.append(reformattedString)
+        }
+        
+        numSentences += 1
     }
 
 
     
     @IBAction func exitPressed(_ sender: SqueezeButton) {
         DatabaseManager.sharedInstance.transcriptController = nil
+        LanguageSpeaker.sharedInstance.pendingUtterances = []
     }
 
     /*

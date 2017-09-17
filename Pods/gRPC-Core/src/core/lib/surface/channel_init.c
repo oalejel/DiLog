@@ -119,7 +119,7 @@ static const char *name_for_type(grpc_channel_stack_type type) {
     case GRPC_NUM_CHANNEL_STACK_TYPES:
       break;
   }
-  GPR_UNREACHABLE_CODE(return "UNKNOWN");
+  return "UNKNOWN";
 }
 
 bool grpc_channel_init_create_stack(grpc_exec_ctx *exec_ctx,

@@ -9,7 +9,6 @@
 import UIKit
 
 class StudentQRController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var qrView: UIView!
     
     @IBOutlet weak var codeTextField: UITextField!
     
@@ -34,8 +33,6 @@ class StudentQRController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
     }
-
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     
@@ -96,8 +93,10 @@ class StudentQRController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        if segue.identifier == "showLanguagePicker" {
             DatabaseManager.sharedInstance.setupDatabaseListener()
+        }
+        
             
             
     }

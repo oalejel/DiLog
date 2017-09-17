@@ -50,5 +50,5 @@ bool grpc_channel_stack_type_is_client(grpc_channel_stack_type type) {
     case GRPC_NUM_CHANNEL_STACK_TYPES:
       break;
   }
-  GPR_UNREACHABLE_CODE(return true;);
+  return true;
 }

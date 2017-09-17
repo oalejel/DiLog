@@ -13,7 +13,7 @@ import Firebase
 @objc class DatabaseManager: NSObject {
     @objc static let sharedInstance: DatabaseManager! = DatabaseManager()
     //do not use this in student mode – you should eventually make this code safer
-    @objc public var streamingLanguageCode: String = "en-US"
+    @objc public var streamingLanguageCode: String! = "en-US"
     @objc public var studentLanguageCode: String! = "es-MX"
     
     var translater: ROGoogleTranslate!
@@ -66,9 +66,10 @@ import Firebase
         ref.child("instructors").observeSingleEvent(of: .value, with: { (snapshot) in
             
             let d = snapshot.value as! [String:[String:String]]
-            print(d[self.instructorCode])
+//            print(d[self.instructorCode])
 //            self.streamingLanguageCode = arr.object(forKey: "lang") as? String ?? "en-US"
-            self.streamingLanguageCode = d[self.instructorCode]!["lang"]!
+            
+            self.streamingLanguageCode = d[self.instructorCode]?["lang"]
             print("our langauge is: ")
             print(self.streamingLanguageCode)//((snapshot.value as! NSArray).object(at: ) as? String ?? "errrrrrr"))
         }) { (error) in
