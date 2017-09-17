@@ -15,6 +15,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var studentButton: SqueezeButton!
     
+    @IBOutlet weak var hiLabel: UILabel!
+    
+    @IBOutlet weak var whoLabel: UILabel!
+    
+    var hasAppearedOnce = false
+    let bounds = UIScreen.main.bounds
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //REMOVE THIS LATER
@@ -25,6 +32,20 @@ class ViewController: UIViewController {
 //        studentButton.layer.borderWidth = 3
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !hasAppearedOnce {
+            hasAppearedOnce = true
+            
+            UIView.animate(withDuration: 3, animations: { 
+                hiLabel.center = CGPoint(x: bounds.width / 2, y: bounds.size.height / 2)
+            })
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

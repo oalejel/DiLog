@@ -60,8 +60,14 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi!  Who are you?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPI-1L-vhZ">
-                                <rect key="frame" x="93.5" y="258" width="188" height="76.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who are you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPI-1L-vhZ">
+                                <rect key="frame" x="93.5" y="296.5" width="188" height="38.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="28"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4J-uV-bYf">
+                                <rect key="frame" x="168" y="250" width="38" height="39"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="28"/>
                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -74,19 +80,23 @@
                             <constraint firstItem="jPI-1L-vhZ" firstAttribute="centerX" secondItem="UeF-xo-fwF" secondAttribute="centerX" id="OUb-Yx-1VM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BY6-pH-phK" secondAttribute="trailing" constant="25" id="Wdf-JQ-5g3"/>
                             <constraint firstItem="kJC-GO-0XK" firstAttribute="top" secondItem="BY6-pH-phK" secondAttribute="bottom" constant="24" id="jtk-Cl-m32"/>
+                            <constraint firstItem="p4J-uV-bYf" firstAttribute="centerX" secondItem="UeF-xo-fwF" secondAttribute="centerX" id="k8b-BK-3fz"/>
+                            <constraint firstItem="jPI-1L-vhZ" firstAttribute="top" secondItem="p4J-uV-bYf" secondAttribute="bottom" constant="7.5" id="kCv-ny-MtO"/>
                             <constraint firstItem="BY6-pH-phK" firstAttribute="leading" secondItem="UeF-xo-fwF" secondAttribute="leadingMargin" constant="25" id="kuj-C1-piF"/>
                             <constraint firstItem="BY6-pH-phK" firstAttribute="top" secondItem="jPI-1L-vhZ" secondAttribute="bottom" constant="60.5" id="tVG-HX-FMg"/>
                             <constraint firstItem="kJC-GO-0XK" firstAttribute="leading" secondItem="UeF-xo-fwF" secondAttribute="leadingMargin" constant="25" id="zhh-jw-irY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hiLabel" destination="p4J-uV-bYf" id="NG7-dt-bkd"/>
                         <outlet property="studentButton" destination="kJC-GO-0XK" id="We9-fx-cYB"/>
                         <outlet property="teacherButton" destination="BY6-pH-phK" id="vAD-3e-wsR"/>
+                        <outlet property="whoLabel" destination="jPI-1L-vhZ" id="A5h-1Z-K9a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAM-V2-DgS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.5999999999999" y="272.11394302848578"/>
+            <point key="canvasLocation" x="1175" y="272"/>
         </scene>
         <!--Teacher Language Controller-->
         <scene sceneID="bUi-wd-Z4Z">
